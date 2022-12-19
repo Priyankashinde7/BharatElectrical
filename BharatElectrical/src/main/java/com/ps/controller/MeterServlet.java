@@ -44,9 +44,9 @@ public class MeterServlet extends HttpServlet {
 		
 		pw.println("<h1 style='color:green;text-align:center'><a href='links.html'>Home</a></h1>");
 		pw.println("<table border = '1' align ='center'>");
-		pw.println("<tr><th>CustomerName</th><th>CustomerId</th><th>MeterNo</th><th>Units</th><th>Amount</th><th>DiscountAmount</th></tr>");
+		pw.println("<tr><th>CustomerName</th><th>CustomerId</th><th>MeterNo</th><th>Units</th><th>Amount</th><th>Discount</th><th>DiscountAmount</th></tr>");
 		
-		pw.println("<tr><td>"+mb.getCustName()+"</td><td>"+mb.getCustomerIdc()+"</td><td>"+mb.getMeterNoc()+"</td><td>"+mb.getMeterReadingc()+"</td><td>"+mb.getAmount()+"</td><td>"+mb.getDiscountAmount()+"</td></tr>");
+		pw.println("<tr><td>"+mb.getCustName()+"</td><td>"+mb.getCustomerIdc()+"</td><td>"+mb.getMeterNoc()+"</td><td>"+mb.getMeterReadingc()+"</td><td>"+mb.getAmount()+"</td><td>"+mb.getPercentage()+"</td><td>"+mb.getDiscountAmount()+"</td></tr>");
 		pw.println("</table>");
 		//close the stream
 		pw.close();

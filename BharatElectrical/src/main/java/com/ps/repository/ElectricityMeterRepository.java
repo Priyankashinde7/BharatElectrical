@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class ElectricityMeterRepository {
-	private static final String INSERT_UNIT_READING = "INSERT INTO UNIT_READING VALUES(?,?,?,?,?,?)";
+	private static final String INSERT_UNIT_READING = "INSERT INTO UNIT_READING VALUES(?,?,?,?,?,?,?)";
 	
 	public void SendValuesToDb(MeterBill mb) {
 		//load the jdbc driver class
@@ -25,6 +25,7 @@ public class ElectricityMeterRepository {
 			String meterNo=mb.getMeterNoc();
 			double meterReading=mb.getMeterReadingc();
 			double amount = mb.getAmount();
+			String s =mb.getPercentage();
 			double discAmount = mb.getDiscountAmount();
 			
 			//set the above inputs to the pre-compiled SQL Query Params
@@ -33,7 +34,9 @@ public class ElectricityMeterRepository {
 			ps.setString(3, meterNo);
 			ps.setDouble(4, meterReading);
 			ps.setDouble(5, amount);
-			ps.setDouble(6, discAmount);
+			ps.setString(6,s);
+			ps.setDouble(7, discAmount);
+			
 			
 			//execute the pre-compiled Query
 			int result = ps.executeUpdate();

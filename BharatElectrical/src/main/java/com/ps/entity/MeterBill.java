@@ -3,6 +3,7 @@ package com.ps.entity;
 public class MeterBill {
 	private String nameOfCust,customerIdc, meterNoc;
 	private double meterReadingc, amount,discAmount;
+	private String s;
 	
 	public void setCustName(String name){
 		this.nameOfCust= name;
@@ -37,6 +38,12 @@ public class MeterBill {
 	}
 	public double getAmount() {
 		return amount;
+	}
+	public void setPercentage(String s) {
+		this.s= s;
+	}
+	public String getPercentage() {
+		return s;
 	}
 	public void setDiscountAmount(double discAmount) {
 		this.discAmount= discAmount;
