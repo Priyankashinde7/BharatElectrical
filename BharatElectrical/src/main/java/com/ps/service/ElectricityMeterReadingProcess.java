@@ -15,6 +15,7 @@ public class ElectricityMeterReadingProcess implements ElectricityMeterProcess{
 		double meterReading=dt.getMeterReadingc();
 		double unit = dt.getMeterReadingc();
 		double amount = unit * 5;
+		double discAmount = 0;
 		
 		System.out.println("Your name :"+dt.getCustName());
 		System.out.println("Your Customer Id is :"+dt.getCustomerIdc());
@@ -24,21 +25,21 @@ public class ElectricityMeterReadingProcess implements ElectricityMeterProcess{
 		if(unit<=100) {
 			System.out.println("you will get 5% discount");
 			double discValue= amount * 0.05;
-			amount = amount - discValue;
-			System.out.println("After discount your amount is:"+amount);
+			discAmount = amount - discValue;
+			System.out.println("After discount your amount is:"+discAmount);
 		}
 		
 		if(unit >= 100 && unit <= 200) {
 			System.out.println("you will get 10% discount");
 			double discValue= amount * 0.1;
-			amount = amount - discValue;
-			System.out.println("After discount your amount is:"+amount);
+			discAmount = amount - discValue;
+			System.out.println("After discount your amount is:"+discAmount);
 		}
 		if(unit >= 200 && unit <=500) {
 			System.out.println("you will get 20% discount");
 			double discValue= amount * 0.2;
-			amount = amount - discValue;
-			System.out.println("After discount your amount is:"+amount);
+			discAmount = amount - discValue;
+			System.out.println("After discount your amount is:"+discAmount);
 		}
 		if(unit > 500) {
 			System.out.println("you will not get any discount");
@@ -50,7 +51,8 @@ public class ElectricityMeterReadingProcess implements ElectricityMeterProcess{
 		mb.setCustomerIdc(customerId);
 		mb.setMeterNoc(meterNo);
 		mb.setMeterReadingc(meterReading);
-		mb.setDiscountAmount(amount);
+		mb.setAmount(amount);
+		mb.setDiscountAmount(discAmount);
 		ElectricityMeterRepository emp1 =new ElectricityMeterRepository();
 		emp1.SendValuesToDb(mb);
 		return mb;

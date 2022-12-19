@@ -2,7 +2,7 @@ package com.ps.entity;
 
 public class MeterBill {
 	private String nameOfCust,customerIdc, meterNoc;
-	private double meterReadingc, amount;
+	private double meterReadingc, amount,discAmount;
 	
 	public void setCustName(String name){
 		this.nameOfCust= name;
@@ -32,10 +32,16 @@ public class MeterBill {
 	public double getMeterReadingc() {
 		return meterReadingc;
 	}
-	public void setDiscountAmount(double amount) {
+	public void setAmount(double amount) {
 		this.amount= amount;
 	}
-	public double getDiscountAmount() {
+	public double getAmount() {
 		return amount;
+	}
+	public void setDiscountAmount(double discAmount) {
+		this.discAmount= discAmount;
+	}
+	public double getDiscountAmount() {
+		return discAmount;
 	}
 }
