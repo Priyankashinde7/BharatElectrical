@@ -25,7 +25,7 @@ public class MeterServlet extends HttpServlet {
 		res.setContentType("text/html");
 		//read additional req param value
 
-		String s1Val=req.getParameter("s");
+		String s1Val=req.getParameter("submit");
 		String name=req.getParameter("name");
 		String customerId=req.getParameter("customerid");
 		String meterNo=req.getParameter("meterno");
